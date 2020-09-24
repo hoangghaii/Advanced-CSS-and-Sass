@@ -1,0 +1,35 @@
+.back-to-top {
+	position: fixed;
+	bottom: 4%;
+	right: 4.2%;
+
+	width: 5rem;
+	height: 5rem;
+	padding: 1rem;
+	background-color: $color-primary-dark;
+	box-shadow: 0 2rem 5rem rgba($color-black, 0.6);
+	border-radius: 50%;
+
+	z-index: 17;
+
+	opacity: 0;
+	visibility: hidden;
+
+	transition: transform 0.2s, opacity 0.5s, visibility 0.5s;
+	cursor: pointer;
+
+	&__icon {
+		display: block;
+		width: 100%;
+		color: $color-white;
+	}
+
+	&:hover {
+		transform: translateY(-0.5rem);
+	}
+
+	&.show {
+		opacity: 1;
+		visibility: visible;
+	}
+}

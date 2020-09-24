@@ -1,0 +1,172 @@
+.navigation {
+	&__checkbox {
+		display: none;
+	}
+
+	&__button {
+		width: 7rem;
+		height: 7rem;
+		border-radius: 50%;
+		background-color: $color-white;
+		box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
+
+		position: fixed;
+		right: 6rem;
+		top: 6rem;
+
+		cursor: pointer;
+		z-index: 20;
+
+		transition: all 0.5s;
+	}
+
+	&__icon {
+		&,
+		&::before,
+		&::after {
+			background-color: $color-grey-dark-3;
+			width: 3rem;
+			height: 2px;
+			display: inline-block;
+
+			transition: all 0.2s;
+		}
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+
+			transform: translateY(-0.8rem);
+		}
+
+		&::after {
+			transform: translateY(0.8rem);
+		}
+	}
+
+	&__button:hover &__icon {
+		&::before {
+			transform: translateY(-1rem);
+		}
+
+		&::after {
+			transform: translateY(1rem);
+		}
+	}
+
+	&__background {
+		width: 6rem;
+		height: 6rem;
+		border-radius: 50%;
+
+		position: fixed;
+		right: 6.5rem;
+		top: 6.5rem;
+
+		background-image: radial-gradient(
+			$color-primary-light,
+			$color-primary-dark
+		);
+		z-index: 18;
+
+		transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+	}
+
+	&__nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+
+		width: 0;
+		height: 100vh;
+
+		z-index: 19;
+		opacity: 0;
+
+		transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	&__list {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		list-style: none;
+		width: 100%;
+	}
+
+	&__item {
+		text-align: center;
+		margin: 1rem;
+	}
+
+	&__link {
+		&,
+		&:link,
+		&:visited {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: $color-white;
+			font-size: 3rem;
+			font-weight: 300;
+			display: inline-block;
+			padding: 1rem 2rem;
+
+			background-image: linear-gradient(
+				120deg,
+				transparent 0,
+				transparent 50%,
+				$color-white 50%
+			);
+			background-size: 220%;
+
+			transition: all 0.4s;
+
+			span {
+				display: inline-block;
+				margin-right: 1.5rem;
+			}
+		}
+
+		&:hover,
+		&:active {
+			color: $color-primary;
+			background-position: 100%;
+
+			transform: translateX(1rem);
+		}
+	}
+
+	//FUNCTIONNALITY
+	&__checkbox:checked ~ &__nav {
+		width: 100%;
+		opacity: 1;
+	}
+
+	&__checkbox:checked ~ &__background {
+		transform: scale(80);
+	}
+
+	&__checkbox:checked + &__button &__icon {
+		background-color: transparent;
+
+		&::before {
+			transform: rotate(135deg);
+		}
+
+		&::after {
+			transform: rotate(-135deg);
+		}
+	}
+
+	&__link:visited ~ &__background {
+		transform: scale(0);
+	}
+}

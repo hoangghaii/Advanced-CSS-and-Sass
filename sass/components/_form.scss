@@ -1,0 +1,103 @@
+.form {
+	&__group:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+
+	&__input {
+		font-size: 1.5rem;
+		font-family: inherit;
+		color: inherit;
+		padding: 1.5rem 2rem;
+		border-radius: 2px;
+		background-color: rgba($color-white, 0.5);
+		border: none;
+		border-bottom: 3px solid transparent;
+		width: 100%;
+		display: block;
+
+		transition: all 0.25s;
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+			border-bottom: 3px solid $color-primary;
+		}
+
+		&:focus:invalid {
+			border-bottom-color: $color-secondary-dark;
+		}
+
+		&::-webkit-input-placeholder {
+			color: $color-grey-dark-2;
+		}
+	}
+
+	&__label {
+		font-size: 1.2rem;
+		font-weight: 700;
+		margin-left: 2rem;
+		margin-top: 0.7rem;
+		display: block;
+		transition: all 0.3s;
+	}
+
+	&__input:placeholder-shown + &__label {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-4rem);
+	}
+
+	&__radio {
+		&-group {
+			width: 45%;
+			display: inline-block;
+		}
+
+		&-input {
+			display: none;
+		}
+
+		&-label {
+			font-size: $default-font-size;
+			cursor: pointer;
+			padding-left: 5rem;
+
+			position: relative;
+		}
+
+		&-button {
+			width: 3rem;
+			height: 3rem;
+			border: 5px solid $color-primary;
+			border-radius: 50%;
+			display: inline-block;
+			position: absolute;
+			left: 0;
+			right: -0.5rem;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+
+				width: 1.5rem;
+				height: 1.5rem;
+				background-color: $color-primary;
+				border-radius: 50%;
+				display: inline-block;
+
+				opacity: 0;
+				visibility: hidden;
+
+				transition: all 0.3s;
+			}
+		}
+
+		&-input:checked ~ &-label &-button::after {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
