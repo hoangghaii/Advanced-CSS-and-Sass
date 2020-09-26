@@ -18,6 +18,16 @@
 		z-index: 20;
 
 		transition: all 0.5s;
+
+		@include respond(tab-port) {
+			right: 3.5rem;
+			top: 3.5rem;
+		}
+
+		@include respond(phone) {
+			right: 3rem;
+			top: 3rem;
+		}
 	}
 
 	&__icon {
@@ -76,6 +86,16 @@
 		z-index: 18;
 
 		transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+		@include respond(tab-port) {
+			right: 4.5rem;
+			top: 4.5rem;
+		}
+
+		@include respond(phone) {
+			right: 3.5rem;
+			top: 3.5rem;
+		}
 	}
 
 	&__nav {
@@ -96,7 +116,6 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		-webkit-transform: translate(-50%, -50%);
 		transform: translate(-50%, -50%);
 		list-style: none;
 		width: 100%;
