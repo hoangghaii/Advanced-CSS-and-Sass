@@ -305,13 +305,34 @@ body {
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../img/nat-10.jpg);
-  background-size: cover;
+  background-size: 100%;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+}
+@media screen and (max-width: 75em) {
+  .book {
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 65%, transparent 65%), url(../img/nat-10.jpg);
+    background-size: cover;
+  }
+}
+@media screen and (max-width: 56.25em) {
+  .book {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%), url(../img/nat-10.jpg);
+  }
 }
 .book__form {
   width: 50%;
   padding: 6rem;
+}
+@media screen and (max-width: 75em) {
+  .book__form {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 56.25em) {
+  .book__form {
+    width: 100%;
+  }
 }
 
 .btn, .btn:link, .btn:visited {
@@ -409,6 +430,9 @@ body {
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: all 0.8s ease;
 }
+.card__side--front {
+  background-color: #fff;
+}
 .card__side--back {
   transform: rotateY(180deg);
 }
@@ -505,6 +529,45 @@ body {
   font-size: 6rem;
   font-weight: 100;
 }
+@media screen and (max-width: 56.25em) {
+  .card {
+    height: auto;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  }
+  .card__side {
+    position: relative;
+    height: auto;
+    box-shadow: none;
+  }
+  .card__side--back {
+    margin-top: -6rem;
+    padding: 7rem 4rem 4rem 4rem;
+    transform: rotateY(0);
+    -webkit-clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .card:hover .card__side {
+    transform: rotateY(0);
+  }
+  .card__details {
+    padding: 2rem 1rem 6rem 1rem;
+  }
+  .card__cta {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    width: 100%;
+  }
+  .card__price-box {
+    margin-bottom: 3rem;
+  }
+  .card__price-value {
+    font-size: 4rem;
+  }
+}
 
 .composition {
   position: relative;
@@ -563,7 +626,7 @@ body {
   outline: 1rem solid #55c57a;
   transform: scale(1.05);
   box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
-  z-index: 2;
+  z-index: 5;
 }
 .composition:hover .composition__photo:not(:hover) {
   transform: scale(0.95);
@@ -643,6 +706,12 @@ body {
 .form__radio-group {
   width: 45%;
   display: inline-block;
+}
+@media screen and (max-width: 56.25em) {
+  .form__radio-group {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 .form__radio-input {
   display: none;
@@ -773,20 +842,38 @@ body {
   font-size: 1.6rem;
   transform: skewX(-12deg);
 }
+@media screen and (max-width: 56.25em) {
+  .story {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+}
+@media screen and (max-width: 37.5em) {
+  .story {
+    transform: skewX(0);
+  }
+}
 .story__shape {
   width: 15rem;
   height: 15rem;
+  overflow: hidden;
   float: left;
-  -webkit-shape-outside: circle(50% at 50% 50%);
   shape-outside: circle(50% at 50% 50%);
   -webkit-clip-path: circle(50% at 50% 50%);
   clip-path: circle(50% at 50% 50%);
   transform: translateX(-3rem) skewX(12deg);
   position: relative;
 }
+@media screen and (max-width: 37.5em) {
+  .story__shape {
+    transform: translateX(-3rem) skewX(0);
+  }
+}
 .story__image {
   height: 100%;
   transform: translateX(-4rem) scale(1.4);
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transition: all 0.5s;
 }
@@ -801,10 +888,16 @@ body {
   text-align: center;
   opacity: 0;
   transition: all 0.5s;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 .story__text {
   transform: skewX(12deg);
+}
+@media screen and (max-width: 37.5em) {
+  .story__text {
+    transform: skewX(0);
+  }
 }
 .story:hover .story__caption {
   opacity: 1;
@@ -812,6 +905,7 @@ body {
 }
 .story:hover .story__image {
   transform: translateX(-4rem) scale(1);
+  -webkit-filter: blur(3px) brightness(80%);
   filter: blur(3px) brightness(80%);
 }
 

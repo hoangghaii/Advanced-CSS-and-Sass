@@ -10,12 +10,22 @@
 
 	transform: skewX(-12deg);
 
+	@include respond(tab-port) {
+		width: 100%;
+		padding: 4rem;
+		padding-left: 7rem;
+	}
+
+	@include respond(phone) {
+		transform: skewX(0);
+	}
+
 	&__shape {
 		width: 15rem;
 		height: 15rem;
+		overflow: hidden;
 
 		float: left;
-		-webkit-shape-outside: circle(50% at 50% 50%);
 		shape-outside: circle(50% at 50% 50%);
 
 		-webkit-clip-path: circle(50% at 50% 50%);
@@ -23,12 +33,17 @@
 
 		transform: translateX(-3rem) skewX(12deg);
 		position: relative;
+
+		@include respond(phone) {
+			transform: translateX(-3rem) skewX(0);
+		}
 	}
 
 	&__image {
 		height: 100%;
 
 		transform: translateX(-4rem) scale(1.4);
+		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 
 		transition: all 0.5s;
@@ -47,11 +62,17 @@
 		opacity: 0;
 		transition: all 0.5s;
 
+		-webkit-backface-visibility: hidden;
+
 		backface-visibility: hidden;
 	}
 
 	&__text {
 		transform: skewX(12deg);
+
+		@include respond(phone) {
+			transform: skewX(0);
+		}
 	}
 
 	&:hover &__caption {
@@ -61,6 +82,7 @@
 
 	&:hover &__image {
 		transform: translateX(-4rem) scale(1);
+		-webkit-filter: blur(3px) brightness(80%);
 		filter: blur(3px) brightness(80%);
 	}
 }
