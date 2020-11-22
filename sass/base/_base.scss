@@ -29,6 +29,7 @@ body {
 	padding: 3rem;
 	width: 100%;
 	max-width: 100%;
+	overflow-x: hidden;
 
 	@include respond(tab-port) {
 		padding: 0;
