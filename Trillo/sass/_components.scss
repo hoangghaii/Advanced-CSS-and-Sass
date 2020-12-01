@@ -94,6 +94,140 @@
 		justify-content: center;
 		align-items: center;
 	}
+	&__messenger-box {
+		position: relative;
+	}
+	&__messenger {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		right: 0;
+		top: 6.5rem;
+		z-index: 10;
+		padding: 1.5rem 1.5rem;
+		background-color: var(--color-grey-light-1);
+		border-radius: 5px;
+		box-shadow: var(--shadow-dark);
+		transform: scaleY(0);
+		transform-origin: top;
+		transition: transform 0.25s;
+		&-heading {
+			display: flex;
+			align-items: center;
+			margin-bottom: 1rem;
+			padding: 0 0.5rem;
+			&--title {
+				font-size: 2.2rem;
+				font-weight: 800;
+				text-transform: capitalize;
+				margin-right: auto;
+			}
+			&--icon {
+				width: 1.75rem;
+				height: 1.75rem;
+				&:first-of-type {
+					margin-right: 2rem;
+				}
+			}
+		}
+		&--list {
+			color: var(--color-grey-dark-2);
+		}
+		&--item {
+			display: flex;
+			align-items: center;
+			padding: 0.8rem 1.5rem;
+			background-color: transparent;
+			border-radius: 5px;
+			transition: all 0.25s;
+			&:hover {
+				background-color: var(--color-grey-dark-4);
+			}
+			&:not(:last-of-type) {
+				margin-bottom: 1rem;
+			}
+		}
+		&--img {
+			width: 5rem;
+			height: 5rem;
+			border-radius: 50%;
+			margin-right: 1rem;
+		}
+		&-user {
+			flex: 1;
+			width: 20rem;
+			color: var(--color-grey-dark-3);
+			& > * {
+				display: block;
+				transition: all 0.25s;
+			}
+			&--name {
+				font-size: 1.5rem;
+				font-weight: 800;
+				color: currentColor;
+			}
+			&--msg {
+				font-size: 1.4rem;
+				font-weight: 400;
+				color: currentColor;
+			}
+		}
+		&--item:hover &-user--name,
+		&--item:hover &-user--msg {
+			color: #fff;
+		}
+
+		&--icon {
+			width: 1.75rem;
+			height: 1.75rem;
+			fill: var(--color-grey-dark-2);
+			&-img {
+				border-radius: 50%;
+			}
+		}
+		&-footer {
+			border-top: var(--line);
+			font-size: 1.5rem;
+			font-weight: 600;
+			text-align: center;
+			margin-top: 1.5rem;
+			padding-top: 1.5rem;
+		}
+	}
+	&__messenger-box:hover &__messenger {
+		transform: scaleY(1);
+	}
+	&__search {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 1.5rem;
+		padding: 0 1rem;
+		&--input {
+			font-family: inherit;
+			font-size: inherit;
+			color: inherit;
+			background-color: var(--color-grey-light-2);
+			outline: none;
+			border: none;
+			width: 100%;
+			padding: 0.7rem 2rem 0.7rem 4rem;
+			border-radius: 30rem;
+			margin-left: -3.5rem;
+			margin-right: -1.5rem;
+		}
+		&--button {
+			outline: none;
+			border: none;
+			background-color: var(--color-grey-light-2);
+			z-index: 10;
+		}
+		&--icon {
+			height: 2rem;
+			width: 2rem;
+			fill: var(--color-grey-dark-3);
+		}
+	}
 	&__user-photo {
 		height: 3.75rem;
 		border-radius: 50%;
@@ -106,7 +240,9 @@
 		list-style: none;
 		position: absolute;
 		right: -1px;
-		top: 7rem;
+		top: 6.5rem;
+		border-radius: 5px;
+		box-shadow: var(--shadow-dark);
 		display: flex;
 		flex-direction: column;
 		z-index: 9;
