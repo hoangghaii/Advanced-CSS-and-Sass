@@ -33,7 +33,10 @@
 				</form>
 
 				<nav class="user-nav">
-					<div class="user-nav__icon-box user-nav__notification-box">
+					<div
+						class="user-nav__icon-box user-nav__notification-box"
+						onclick='toggleModal(".user-nav__notify",".user-nav__option",".user-nav__messenger")'
+					>
 						<svg class="user-nav__icon">
 							<use
 								xlink:href="img/sprite.svg#icon-bookmark"
@@ -181,7 +184,11 @@
 							</ul>
 						</div>
 					</div>
-					<div class="user-nav__icon-box user-nav__messenger-box">
+
+					<div
+						class="user-nav__icon-box user-nav__messenger-box"
+						onclick='toggleModal(".user-nav__messenger",".user-nav__option",".user-nav__notify")'
+					>
 						<svg class="user-nav__icon">
 							<use xlink:href="img/sprite.svg#icon-chat"></use>
 						</svg>
@@ -370,105 +377,116 @@
 							</div>
 						</div>
 					</div>
-					<div class="user-nav__user">
+
+					<div
+						class="user-nav__user"
+						onclick='toggleModal(".user-nav__option",".user-nav__messenger",".user-nav__notify")'
+					>
 						<img
 							src="img/user.jpg"
 							alt="user logo"
 							class="user-nav__user-photo"
 						/>
 						<span class="user-nav__user-name">Jonas</span>
-						<ul class="user-nav__user-option">
-							<li class="user-nav__user-option--list">
-								<svg class="user-nav__user-option--icon">
-									<use
-										xlink:href="img/symbol.svg#icon-user"
-									></use>
-								</svg>
-								<span class="user-nav__user-option--title">
-									Profile
+						<div class="user-nav__option">
+							<div class="user-nav__option-profile">
+								<img
+									src="img/user.jpg"
+									alt="user logo"
+									class="user-nav__option-profile--photo"
+								/>
+								<span class="user-nav__option-profile--user">
+									<span
+										class="user-nav__option-profile--user-name"
+									>
+										Jonas Schmedtmann
+									</span>
+									<span
+										class="user-nav__option-profile--user-msg"
+									>
+										See your profile
+									</span>
 								</span>
-								<svg class="user-nav__user-option--icon">
-									<use
-										xlink:href="img/sprite.svg#icon-chevron-thin-right"
-									></use>
-								</svg>
-							</li>
-							<li class="user-nav__user-option--list">
-								<svg class="user-nav__user-option--icon">
-									<use
-										xlink:href="img/symbol.svg#icon-ticket"
-									></use>
-								</svg>
-								<span class="user-nav__user-option--title">
-									Bookings
-								</span>
-								<svg class="user-nav__user-option--icon">
-									<use
-										xlink:href="img/sprite.svg#icon-chevron-thin-right"
-									></use>
-								</svg>
-							</li>
-							<li class="user-nav__user-option--list">
-								<svg class="user-nav__user-option--icon">
-									<use
-										xlink:href="img/symbol.svg#icon-credit"
-									></use>
-								</svg>
-								<span class="user-nav__user-option--title">
-									Payment
-								</span>
-								<svg class="user-nav__user-option--icon">
-									<use
-										xlink:href="img/sprite.svg#icon-chevron-thin-right"
-									></use>
-								</svg>
-							</li>
-							<li class="user-nav__user-option--list">
-								<svg class="user-nav__user-option--icon">
-									<use
-										xlink:href="img/symbol.svg#icon-cog"
-									></use>
-								</svg>
-								<span class="user-nav__user-option--title">
-									Setting
-								</span>
-								<svg class="user-nav__user-option--icon">
-									<use
-										xlink:href="img/sprite.svg#icon-chevron-thin-right"
-									></use>
-								</svg>
-							</li>
-							<li class="user-nav__user-option--list">
-								<svg class="user-nav__user-option--icon">
-									<use
-										xlink:href="img/symbol.svg#icon-log-out"
-									></use>
-								</svg>
-								<span class="user-nav__user-option--title">
-									Logout
-								</span>
-								<svg class="user-nav__user-option--icon">
-									<use
-										xlink:href="img/sprite.svg#icon-chevron-thin-right"
-									></use>
-								</svg>
-							</li>
-							<li class="user-nav__user-option--list">
-								<svg class="user-nav__user-option--icon">
+							</div>
+							<div class="user-nav__option-feedback">
+								<svg class="user-nav__option-feedback--icon">
 									<use
 										xlink:href="img/symbol.svg#icon-help-with-circle"
 									></use>
 								</svg>
-								<span class="user-nav__user-option--title">
-									Help
+								<span
+									class="user-nav__option-feedback--content"
+								>
+									<span
+										class="user-nav__option-feedback--title"
+									>
+										Comments
+									</span>
+									<span
+										class="user-nav__option-feedback--msg"
+									>
+										Contribute to help us improve
+									</span>
 								</span>
-								<svg class="user-nav__user-option--icon">
-									<use
-										xlink:href="img/sprite.svg#icon-chevron-thin-right"
-									></use>
-								</svg>
-							</li>
-						</ul>
+							</div>
+							<ul class="user-nav__option--list">
+								<li class="user-nav__option--item">
+									<svg class="user-nav__option--icon">
+										<use
+											xlink:href="img/symbol.svg#icon-cog"
+										></use>
+									</svg>
+									<span class="user-nav__option--title">
+										Settings & privacy
+									</span>
+									<svg class="user-nav__option--icon2">
+										<use
+											xlink:href="img/sprite.svg#icon-chevron-thin-right"
+										></use>
+									</svg>
+								</li>
+								<li class="user-nav__option--item">
+									<svg class="user-nav__option--icon">
+										<use
+											xlink:href="img/symbol.svg#icon-ticket"
+										></use>
+									</svg>
+									<span class="user-nav__option--title">
+										Bookings
+									</span>
+									<svg class="user-nav__option--icon2">
+										<use
+											xlink:href="img/sprite.svg#icon-chevron-thin-right"
+										></use>
+									</svg>
+								</li>
+								<li class="user-nav__option--item">
+									<svg class="user-nav__option--icon">
+										<use
+											xlink:href="img/symbol.svg#icon-credit"
+										></use>
+									</svg>
+									<span class="user-nav__option--title">
+										Payment
+									</span>
+									<svg class="user-nav__option--icon2">
+										<use
+											xlink:href="img/sprite.svg#icon-chevron-thin-right"
+										></use>
+									</svg>
+								</li>
+								<li class="user-nav__option--item">
+									<svg class="user-nav__option--icon">
+										<use
+											xlink:href="img/symbol.svg#icon-log-out"
+										></use>
+									</svg>
+									<span class="user-nav__option--title">
+										Logout
+									</span>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</nav>
 			</header>
@@ -736,4 +754,5 @@
 			</div>
 		</div>
 	</body>
+	<script src="./main.js"></script>
 </html>
