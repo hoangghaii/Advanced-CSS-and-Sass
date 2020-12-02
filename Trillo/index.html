@@ -33,13 +33,153 @@
 				</form>
 
 				<nav class="user-nav">
-					<div class="user-nav__icon-box">
+					<div class="user-nav__icon-box user-nav__notification-box">
 						<svg class="user-nav__icon">
 							<use
 								xlink:href="img/sprite.svg#icon-bookmark"
 							></use>
 						</svg>
 						<span class="user-nav__notification">7</span>
+						<div class="user-nav__notify">
+							<div class="user-nav__notify-heading">
+								<p class="user-nav__notify-heading--title">
+									notification
+								</p>
+								<svg class="user-nav__notify-heading--icon">
+									<use
+										xlink:href="img/symboldefs.svg#icon-dots-three-horizontal"
+									></use>
+								</svg>
+							</div>
+							<ul class="user-nav__notify--list">
+								<li
+									class="user-nav__notify--item user-nav__notify--new-notify"
+								>
+									<img
+										src="./img/user-1.jpg"
+										alt="notify 1"
+										class="user-nav__notify--img"
+									/>
+									<span class="user-nav__notify-msg">
+										<span
+											class="user-nav__notify-msg--content"
+										>
+											Lorem ipsum dolor sit amet
+										</span>
+										<span
+											class="user-nav__notify-msg--time"
+										>
+											14 hours ago
+										</span>
+									</span>
+									<span class="user-nav__notify--icon-new">
+									</span>
+								</li>
+								<li
+									class="user-nav__notify--item user-nav__notify--new-notify"
+								>
+									<img
+										src="./img/user-2.jpg"
+										alt="notify 2"
+										class="user-nav__notify--img"
+									/>
+									<span class="user-nav__notify-msg">
+										<span
+											class="user-nav__notify-msg--content"
+										>
+											Lorem ipsum dolor sit amet
+										</span>
+										<span
+											class="user-nav__notify-msg--time"
+										>
+											14 hours ago
+										</span>
+									</span>
+									<span class="user-nav__notify--icon-new">
+									</span>
+								</li>
+								<li class="user-nav__notify--item">
+									<img
+										src="./img/user-3.jpg"
+										alt="notify 3"
+										class="user-nav__notify--img"
+									/>
+									<span class="user-nav__notify-msg">
+										<span
+											class="user-nav__notify-msg--content"
+										>
+											Lorem ipsum dolor sit amet
+										</span>
+										<span
+											class="user-nav__notify-msg--time"
+										>
+											14 hours ago
+										</span>
+									</span>
+								</li>
+								<li
+									class="user-nav__notify--item user-nav__notify--new-notify"
+								>
+									<img
+										src="./img/user-4.jpg"
+										alt="notify 4"
+										class="user-nav__notify--img"
+									/>
+									<span class="user-nav__notify-msg">
+										<span
+											class="user-nav__notify-msg--content"
+										>
+											Lorem ipsum dolor sit amet
+										</span>
+										<span
+											class="user-nav__notify-msg--time"
+										>
+											14 hours ago
+										</span>
+									</span>
+									<span class="user-nav__notify--icon-new">
+									</span>
+								</li>
+								<li class="user-nav__notify--item">
+									<img
+										src="./img/user-5.jpg"
+										alt="notify 5"
+										class="user-nav__notify--img"
+									/>
+									<span class="user-nav__notify-msg">
+										<span
+											class="user-nav__notify-msg--content"
+										>
+											Lorem ipsum dolor sit amet
+										</span>
+										<span
+											class="user-nav__notify-msg--time"
+										>
+											14 hours ago
+										</span>
+									</span>
+								</li>
+								<li class="user-nav__notify--item">
+									<img
+										src="./img/user-6.jpg"
+										alt="notify 6"
+										class="user-nav__notify--img"
+									/>
+									<span class="user-nav__notify-msg">
+										<span
+											class="user-nav__notify-msg--content"
+										>
+											Lorem ipsum dolor sit amet
+										</span>
+										<span
+											class="user-nav__notify-msg--time"
+										>
+											14 hours ago
+										</span>
+									</span>
+								</li>
+							</ul>
+						</div>
 					</div>
 					<div class="user-nav__icon-box user-nav__messenger-box">
 						<svg class="user-nav__icon">
@@ -89,12 +229,12 @@
 										<span
 											class="user-nav__messenger-user--name"
 										>
-											David...
+											Nick Rodriguez
 										</span>
 										<span
 											class="user-nav__messenger-user--msg"
 										>
-											You mother fucker
+											Lorem ipsum dolor sit amet
 										</span>
 									</span>
 									<svg class="user-nav__messenger--icon">
@@ -113,12 +253,12 @@
 										<span
 											class="user-nav__messenger-user--name"
 										>
-											David...
+											Mary Thomas
 										</span>
 										<span
 											class="user-nav__messenger-user--msg"
 										>
-											You mother fucker
+											Consectetur adipisicing elit
 										</span>
 									</span>
 									<svg class="user-nav__messenger--icon">
@@ -137,12 +277,13 @@
 										<span
 											class="user-nav__messenger-user--name"
 										>
-											David...
+											John Smith
 										</span>
 										<span
 											class="user-nav__messenger-user--msg"
 										>
-											You mother fucker
+											Fuga doloremque architecto dicta
+											animi
 										</span>
 									</span>
 									<img
@@ -151,7 +292,9 @@
 										class="user-nav__messenger--icon user-nav__messenger--icon-img"
 									/>
 								</li>
-								<li class="user-nav__messenger--item">
+								<li
+									class="user-nav__messenger--item user-nav__messenger--item-unread"
+								>
 									<img
 										src="./img/user-4.jpg"
 										alt="messenger 4"
@@ -161,19 +304,16 @@
 										<span
 											class="user-nav__messenger-user--name"
 										>
-											David...
+											Mike Jones
 										</span>
 										<span
 											class="user-nav__messenger-user--msg"
 										>
-											You mother fucker
+											Totam itaque officia ex
 										</span>
 									</span>
-									<svg class="user-nav__messenger--icon">
-										<use
-											xlink:href="img/symboldefs.svg#icon-checkmark"
-										></use>
-									</svg>
+									<span class="user-nav__messenger--icon">
+									</span>
 								</li>
 								<li class="user-nav__messenger--item">
 									<img
@@ -185,12 +325,12 @@
 										<span
 											class="user-nav__messenger-user--name"
 										>
-											David...
+											Daniel Williams
 										</span>
 										<span
 											class="user-nav__messenger-user--msg"
 										>
-											You mother fucker
+											Accusantium cumque quas ut corporis
 										</span>
 									</span>
 									<svg class="user-nav__messenger--icon">
@@ -209,12 +349,13 @@
 										<span
 											class="user-nav__messenger-user--name"
 										>
-											David...
+											Sarah Brown
 										</span>
 										<span
 											class="user-nav__messenger-user--msg"
 										>
-											You mother fucker
+											Animi nisi dignissimos debitis
+											ratione sapiente
 										</span>
 									</span>
 									<img
@@ -246,6 +387,11 @@
 								<span class="user-nav__user-option--title">
 									Profile
 								</span>
+								<svg class="user-nav__user-option--icon">
+									<use
+										xlink:href="img/sprite.svg#icon-chevron-thin-right"
+									></use>
+								</svg>
 							</li>
 							<li class="user-nav__user-option--list">
 								<svg class="user-nav__user-option--icon">
@@ -256,6 +402,11 @@
 								<span class="user-nav__user-option--title">
 									Bookings
 								</span>
+								<svg class="user-nav__user-option--icon">
+									<use
+										xlink:href="img/sprite.svg#icon-chevron-thin-right"
+									></use>
+								</svg>
 							</li>
 							<li class="user-nav__user-option--list">
 								<svg class="user-nav__user-option--icon">
@@ -266,6 +417,11 @@
 								<span class="user-nav__user-option--title">
 									Payment
 								</span>
+								<svg class="user-nav__user-option--icon">
+									<use
+										xlink:href="img/sprite.svg#icon-chevron-thin-right"
+									></use>
+								</svg>
 							</li>
 							<li class="user-nav__user-option--list">
 								<svg class="user-nav__user-option--icon">
@@ -276,6 +432,11 @@
 								<span class="user-nav__user-option--title">
 									Setting
 								</span>
+								<svg class="user-nav__user-option--icon">
+									<use
+										xlink:href="img/sprite.svg#icon-chevron-thin-right"
+									></use>
+								</svg>
 							</li>
 							<li class="user-nav__user-option--list">
 								<svg class="user-nav__user-option--icon">
@@ -286,6 +447,11 @@
 								<span class="user-nav__user-option--title">
 									Logout
 								</span>
+								<svg class="user-nav__user-option--icon">
+									<use
+										xlink:href="img/sprite.svg#icon-chevron-thin-right"
+									></use>
+								</svg>
 							</li>
 							<li class="user-nav__user-option--list">
 								<svg class="user-nav__user-option--icon">
@@ -296,6 +462,11 @@
 								<span class="user-nav__user-option--title">
 									Help
 								</span>
+								<svg class="user-nav__user-option--icon">
+									<use
+										xlink:href="img/sprite.svg#icon-chevron-thin-right"
+									></use>
+								</svg>
 							</li>
 						</ul>
 					</div>
