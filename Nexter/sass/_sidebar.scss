@@ -2,4 +2,52 @@
 	background-color: $color-primary;
 	grid-column: sidebar-start / sidebar-end;
 	grid-row: 1 / -1; /*go to start to the end*/
+
+	display: flex;
+	justify-content: center;
+}
+
+.nav-btn {
+	border: none;
+	border-radius: 0;
+	outline: none;
+
+	background-color: $color-primary;
+	height: 2rem;
+	width: 4.5rem;
+	display: block;
+
+	cursor: pointer;
+	margin-top: 4rem;
+	position: relative;
+
+	transition: all 0.25s;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		background-color: #fff;
+		height: 2px;
+		width: 100%;
+		display: block;
+	}
+
+	&::before {
+		top: 0;
+	}
+
+	&::after {
+		bottom: 0;
+	}
+
+	&:hover,
+	&:focus {
+		transform: translateY(-3px);
+	}
+
+	&:active {
+		transform: translateY(3px);
+	}
 }
