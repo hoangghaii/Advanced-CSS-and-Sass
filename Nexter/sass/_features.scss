@@ -3,17 +3,29 @@
 
 	margin: 15rem 0;
 
-	display: grid;
-	// grid-template-columns: repeat(3, 1fr);
-	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-	gap: 6rem;
+	@supports (display: grid) {
+		display: grid;
+		// grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		gap: 6rem;
+	}
 }
 
 .feature {
-	display: grid;
-	grid-template-columns: min-content [text-start] 1fr [text-end];
-	grid-template-rows: min-content 1fr;
-	gap: 1.5rem 2.5rem;
+	float: left;
+	width: 33.33333%;
+	margin-bottom: 3rem;
+
+	@supports (display: grid) {
+		float: none;
+		width: auto;
+		margin-bottom: 0;
+
+		display: grid;
+		grid-template-columns: min-content [text-start] 1fr [text-end];
+		grid-template-rows: min-content 1fr;
+		gap: 1.5rem 2.5rem;
+	}
 
 	&__icon {
 		fill: $color-primary;

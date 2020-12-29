@@ -8,23 +8,33 @@
 	justify-content: center;
 	justify-items: center;
 	gap: 2rem 0;
+
+	@media only screen and (max-width: $bp-medium) {
+		grid-column: 1/-1;
+	}
 }
 
 .realtor {
 	&__list {
 		display: grid;
 		grid-template-columns: min-content max-content;
+		align-items: center;
 		gap: 2rem 5vh;
+
+		@media only screen and (max-width: $bp-medium) {
+			grid-template-columns: repeat(3, min-content max-content);
+		}
+
+		@media only screen and (max-width: $bp-small) {
+			grid-template-columns: min-content max-content;
+			gap: 3rem 5vh;
+		}
 	}
 
 	&__img {
 		width: 7rem;
 		border-radius: 50%;
 		display: block;
-	}
-
-	&__detail {
-		align-self: center;
 	}
 
 	&__sold {
